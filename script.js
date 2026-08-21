@@ -1,57 +1,76 @@
-
 const text = [
     "i am a developer",
     "i am an electronics enthusiast",
     "i am an astronomer",
     "i am a gamer"
-]
-const runBtn = document.getElementById("RunBtn")
-const typing = document.getElementById("typing")
-const result1 = document.getElementById("Result")
+];
 
-let textIndex = 0
-let charIndex = 0
-let deleting = false
+const runBtn = document.getElementById("RunBtn");
+const typing = document.getElementById("typing");
+const result1 = document.getElementById("Result");
 
-function typeEffect(){
-    const currentText = text[textIndex]
+let typingTimer = null;
 
-    if(!deleting){
-        typing.textContent = currentText.substring(0, charIndex + 1)
-        charIndex ++
+let textIndex = 0;
+let charIndex = 0;
+let deleting = false;
+
+
+function typeEffect() {
+    const currentText = text[textIndex];
+
+    if (!deleting) {
+        typing.textContent = currentText.substring(0, charIndex + 1);
+        charIndex++;
+
         if (charIndex === currentText.length) {
             deleting = true;
-            setTimeout(typeEffect, 1500)
+            setTimeout(typeEffect, 1500);
             return;
         }
-    
-    }else {
-        typing.textContent = currentText.substring(0, charIndex-1)
-        charIndex --
 
-        if (charIndex == 0){
-            deleting = false
-            textIndex = (textIndex + 1) % text.length
+    } else {
+        typing.textContent = currentText.substring(0, charIndex - 1);
+        charIndex--;
+
+        if (charIndex === 0) {
+            deleting = false;
+            textIndex = (textIndex + 1) % text.length;
         }
     }
-    setTimeout(typeEffect,deleting ? 50 :100)
 
+    setTimeout(typeEffect, deleting ? 50 : 100);
 }
 
-typeEffect()
+typeEffect();
+
 
 runBtn.onclick = function () {
-    const text = 'I know PYTHON, HTML, CSS, JAVASCRIPT, \n GDSCRIPT, C++ FOR ARDUINO AND OTHER STUFF, \nlike this website!!!!';
+    const outputText = `I know PYTHON, HTML, CSS, JAVASCRIPT,
+GDSCRIPT, C++ FOR ARDUINO AND OTHER STUFF,
+like this website!!!!`;
 
-    result1.textContent = '';
+    // Stop the previous typing animation
+    if (typingTimer !== null) {
+        clearTimeout(typingTimer);
+        typingTimer = null;
+    }
+
+    // Clear the output
+    result1.textContent = "";
+
     let i = 0;
 
-    const typing = setInterval(() => {
-        result1.textContent += text[i];
-        i++;
+    function typeOutput() {
+        if (i < outputText.length) {
+            result1.textContent += outputText[i];
+            i++;
 
-        if (i >= text.length) {
-            clearInterval(typing);
+            typingTimer = setTimeout(typeOutput, 30);
+        } else {
+            typingTimer = null;
         }
-    }, 30); // typing speed in milliseconds
+    }
+
+    typeOutput();
 };
