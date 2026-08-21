@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+#hero{
+    
+    margin: auto, 0;
+}
+
+p{
+    font-family: 'Inter', sans-serif;
+}
+
+#Result{
+    text-align: center;
+    white-space: pre-line;
+}
+
+.celsius {
+    position: fixed;
+    right: 20px;
+    bottom: 150px;
+    width: 180px;
+    z-index: 100;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+img[alt="Celsius"] {
+    animation: float 3s ease-in-out infinite;
+}
