@@ -66,7 +66,7 @@
 
 
     <!-- About section + Celsius -->
-    <div class="flex flex-col md:flex-row items-center justify-center
+<div class="flex flex-col md:flex-row items-center justify-center
                 gap-4 md:gap-6 mx-auto my-6 px-4">
 
         <!-- Floating Celsius -->
@@ -75,7 +75,9 @@
             alt="Celsius"
             class="w-32 sm:w-36 md:w-44 lg:w-52
        shrink-0
-       order-2 md:order-1"
+       order-2 md:order-1
+       relative z-10
+       -mb-8 md:-mb-0 md:-mr-10 lg:-mr-14"
         >
 
         <!-- About text -->
@@ -85,7 +87,8 @@
                     transition-all duration-300
                     hover:-translate-y-1 hover:border-[#00D9FF]
                     text-center
-                    order-1 md:order-2">
+                    order-1 md:order-2
+                    relative">
 
             <p class="text-lg sm:text-xl">
                 I am a 13 year old hobbyist coder as you can see above.
@@ -106,7 +109,8 @@
                 p-3 w-[95%] sm:w-fit
                 rounded-2xl
                 transition-all duration-300
-                text-center">
+                text-center my-9 transition-all duration-300
+                    hover:-translate-y-1 hover:border-[#00D9FF]">
 
         <div class="font-mono text-lg w-full">
 
@@ -162,8 +166,60 @@
             </div>
 
         </div>
-
+    
+    
     </div>
+    <div  class="flex flex-col items-center gap-3 mx-auto my-3
+                border-2 border-[#30363D] p-3 w-fit rounded-2xl
+                ">
+        <h1 class="text-3xl font-bold">Some Hobbies Include:</h1>
+        <div class="flex flex-col-1 gap-3">
+            <section class=" border-2 border-[#30363D] rounded-2xl p-3 duration-300
+                hover:-translate-y-1 hover:border-[#00D9FF] my-2 text-center" >
+                <label class="text-2xl">💻 Coding</label>
+                <P class="p-2">Languages like Python, C++, <br> and Frontend Web Dev.</P>
+            </section>
+            <section class=" border-2 border-[#30363D] rounded-2xl p-3 duration-300
+                hover:-translate-y-1 hover:border-[#00D9FF] my-2 text-center" >
+                <label class="text-2xl">🛠️ Eletronics</label>
+                <P class="p-2">Fun Fact: I onced shortcircuited  <br> a battery with my hot sldering iron to <br> eletrocute and burn me!!!</P>
+            </section>
+            <section class=" border-2 border-[#30363D] rounded-2xl p-3 duration-300
+                hover:-translate-y-1 hover:border-[#00D9FF] my-2 text-center" >
+                <label class="text-2xl">🏊 Swimming</label>
+                <p class="p-2">You gotto respect a sport!!</p>
+            </section>
+
+        </div>
+    </div >
+
+    <!-- Current projects -->
+    <section class="mx-auto my-8 w-[calc(100%-2rem)] max-w-2xl rounded-2xl border border-[#30363D]
+                    bg-[#161B22] p-5 shadow-lg shadow-black/20 transition-all duration-300
+                    hover:-translate-y-1 hover:border-[#00D9FF] sm:p-6">
+        <div class="mb-5 flex flex-col gap-3 border-b border-[#30363D] pb-4 sm:flex-row sm:items-center sm:justify-between">
+            <h2 class="text-2xl font-bold tracking-tight text-[#F0F6FC] sm:text-3xl">Currently Working On</h2>
+            <span class="w-fit rounded-full border border-cyan-400/40 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300">
+                In progress
+            </span>
+        </div>
+
+        <ul class="space-y-3">
+            <li class="flex items-center gap-3 rounded-xl border border-[#30363D] bg-[#0D1117] px-4 py-3 transition-colors hover:border-cyan-400/60">
+                <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-green-400 shadow-[0_0_10px_#4ade80]"></span>
+                <span class="font-medium"><a href="https://github.com/Sunray-hub/the-site-of-celsius" target="_blank" rel="noopener noreferrer">Maintaining this site</a></span>
+            </li>
+            <li class="flex items-center gap-3 rounded-xl border border-[#30363D] bg-[#0D1117] px-4 py-3 transition-colors hover:border-cyan-400/60">
+                <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-amber-400 shadow-[0_0_10px_#fbbf24]"></span>
+                <span class="font-medium"><A href="https://github.com/Sunray-hub/AtmosHub-Protable-Weather-Station-">ESP32 Weather Station</A></span>
+                <span class="ml-auto whitespace-nowrap text-xs text-amber-300">Almost finished</span>
+            </li>
+            <li class="flex items-center gap-3 rounded-xl border border-[#30363D] bg-[#0D1117] px-4 py-3 transition-colors hover:border-cyan-400/60">
+                <span class="h-2.5 w-2.5 shrink-0 rounded-full bg-violet-400 shadow-[0_0_10px_#a78bfa]"></span>
+                <span class="font-medium">ESP32 Multilingual Project Briefier</span>
+            </li>
+        </ul>
+    </section>
 
     <script src="script.js"></script>
 
