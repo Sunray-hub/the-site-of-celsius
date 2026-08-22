@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sunray-hub.github.io/the-site-of-celsius/sitemap.xml
