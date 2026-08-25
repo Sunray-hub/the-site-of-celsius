@@ -47,8 +47,8 @@ p{
 }
 
 #Result{
-    text-align: center;
     white-space: pre-line;
+    font-family: monospace;
 }
 
 .celsius {
