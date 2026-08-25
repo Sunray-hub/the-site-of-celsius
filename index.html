@@ -223,31 +223,24 @@ Fun fact: sometimes it does.</P>
     </div >
 
     
-    <section class="mx-auto my-8 w-[calc(100%-2rem)] max-w-2xl  border border-[#30363D]
-                    bg-[#161B22] p-5 shadow-lg shadow-black/20 transition-all duration-300
-                    hover:-translate-y-1 hover:border-[#00D9FF] sm:p-6">
-        <div class="mb-5 flex flex-col gap-3 border-b border-[#30363D] pb-4 sm:flex-row sm:items-center sm:justify-between">
-            <h2 class="text-2xl font-bold tracking-tight text-[#F0F6FC] sm:text-3xl">What I'm messing with rn:</h2>
-            <span class="w-fit  border border-cyan-400/40 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300">
-                In progress
-            </span>
+    <section class="mx-auto my-8 w-[calc(100%-2rem)] max-w-2xl border border-[#30363D] bg-[#161B22] p-5 shadow-lg shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:border-[#00D9FF] sm:p-6" aria-labelledby="projects-title">
+        <div class="mb-5 flex items-center justify-between border-b border-[#30363D] pb-4">
+            <h2 id="projects-title" class="text-2xl font-bold tracking-tight text-[#F0F6FC] sm:text-3xl">My projects</h2>
+            <span id="project-counter" class="text-sm text-[#8B949E]"></span>
         </div>
 
-        <ul class="space-y-3">
-            <li class="flex items-center gap-3 border border-[#30363D] bg-[#0D1117] px-4 py-3 transition-colors hover:border-cyan-400/60">
-                <span class="h-2.5 w-2.5 shrink-0  bg-green-400 shadow-[0_0_10px_#4ade80]"></span>
-                <span class="font-medium"><a href="https://github.com/Sunray-hub/the-site-of-celsius" target="_blank" rel="noopener noreferrer">Maintaining this site</a></span>
-            </li>
-            <li class="flex items-center gap-3  border border-[#30363D] bg-[#0D1117] px-4 py-3 transition-colors hover:border-cyan-400/60">
-                <span class="h-2.5 w-2.5 shrink-0  bg-amber-400 shadow-[0_0_10px_#fbbf24]"></span>
-                <span class="font-medium"><A href="https://github.com/Sunray-hub/AtmosHub-Protable-Weather-Station-">ESP32 Weather Station</A></span>
-                <span class="ml-auto whitespace-nowrap text-xs text-amber-300">Almost finished</span>
-            </li>
-            <li class="flex items-center gap-3 border border-[#30363D] bg-[#0D1117] px-4 py-3 transition-colors hover:border-cyan-400/60">
-                <span class="h-2.5 w-2.5 shrink-0  bg-violet-400 shadow-[0_0_10px_#a78bfa]"></span>
-                <span class="font-medium">ESP32 Multilingual Project Briefier</span>
-            </li>
-        </ul>
+        <div id="project-carousel" class="project-carousel" aria-live="polite"></div>
+
+        <div class="mt-5 flex items-center justify-between gap-3">
+            <button id="previous-project" type="button" class="border border-[#30363D] bg-[#0D1117] px-4 py-2 font-mono text-sm text-[#F0F6FC] transition-colors hover:border-cyan-400 hover:text-cyan-300" aria-label="Show previous project">
+                ← Previous
+            </button>
+            <div id="project-dots" class="flex items-center gap-2" aria-label="Project carousel navigation"></div>
+            <button id="next-project" type="button" class="border border-[#30363D] bg-[#0D1117] px-4 py-2 font-mono text-sm text-[#F0F6FC] transition-colors hover:border-cyan-400 hover:text-cyan-300" aria-label="Show next project">
+                Next →
+            </button>
+        </div>
+        <p class="mt-4 text-center text-xs text-[#8B949E]">Click a side card to bring it forward.</p>
     </section>
 
     <script src="script.js"></script>

@@ -101,3 +101,107 @@ runBtn.addEventListener("click", runTerminalCommand);
 terminalInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") runTerminalCommand();
 });
+
+// Add a project by copying one object below and changing its details.
+const projects = [
+    {
+        title: "Celsius's Site",
+        status: "In progress",
+        description: "My personal corner of the internet for coding, electronics, astronomy and the projects I am learning from.",
+        tech: "HTML · Tailwind CSS · JavaScript",
+        link: "https://github.com/Sunray-hub/the-site-of-celsius"
+    },
+    {
+        title: "ESP32 Weather Station",
+        status: "Almost finished",
+        description: "A portable weather station built with an ESP32 to collect and display weather data.",
+        tech: "ESP32 · Arduino · Sensors",
+        link: "https://github.com/Sunray-hub/AtmosHub-Protable-Weather-Station-"
+    },
+    {
+        title: "ESP32 Multilingual Project Briefier",
+        status: "Building",
+        description: "An ESP32 project that helps present project information in more than one language.",
+        tech: "ESP32 · Embedded development",
+        link: ""
+    }
+];
+
+const carousel = document.getElementById("project-carousel");
+const projectCounter = document.getElementById("project-counter");
+const projectDots = document.getElementById("project-dots");
+const previousProject = document.getElementById("previous-project");
+const nextProject = document.getElementById("next-project");
+let activeProject = 0;
+
+function renderProject() {
+    const project = projects[activeProject];
+    const projectLink = project.link
+        ? `<a href="${project.link}" target="_blank" rel="noopener noreferrer" class="mt-5 inline-block border border-cyan-400/50 px-4 py-2 font-mono text-sm text-cyan-300 transition-colors hover:bg-cyan-400/10">View project ↗</a>`
+        : "";
+
+    const previousIndex = (activeProject - 1 + projects.length) % projects.length;
+    const nextIndex = (activeProject + 1) % projects.length;
+
+    if (!carousel.children.length) carousel.innerHTML = projects.map((item, index) => {
+        const position = index === activeProject
+            ? "is-active"
+            : index === previousIndex ? "is-previous" : index === nextIndex ? "is-next" : "is-hidden";
+        const itemLink = item.link
+            ? `<a href="${item.link}" target="_blank" rel="noopener noreferrer" class="mt-5 inline-block border border-cyan-400/50 px-4 py-2 font-mono text-sm text-cyan-300 transition-colors hover:bg-cyan-400/10">View project</a>`
+            : "";
+        return `
+            <article class="project-card ${position}" data-project-index="${index}" tabindex="${index === activeProject ? "0" : "-1"}" role="button" aria-label="Show ${item.title}">
+                <div class="mb-4 flex flex-wrap items-start justify-between gap-3">
+                    <h3 class="text-xl font-bold text-[#F0F6FC]">${item.title}</h3>
+                    <span class="border border-cyan-400/40 bg-cyan-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-cyan-300">${item.status}</span>
+                </div>
+                <p class="leading-relaxed text-[#C9D1D9]">${item.description}</p>
+                <p class="mt-4 font-mono text-xs text-[#8B949E]">${item.tech}</p>
+                ${itemLink}
+            </article>`;
+    }).join("");
+
+    carousel.querySelectorAll(".project-card").forEach((card, index) => {
+        const position = index === activeProject
+            ? "is-active"
+            : index === previousIndex ? "is-previous" : index === nextIndex ? "is-next" : "is-hidden";
+        card.className = `project-card ${position}`;
+        card.tabIndex = index === activeProject ? 0 : -1;
+    });
+
+    projectCounter.textContent = `${activeProject + 1} / ${projects.length}`;
+    projectDots.innerHTML = projects.map((project, index) => `
+        <button type="button" class="h-2.5 w-2.5 rounded-full ${index === activeProject ? "bg-cyan-300" : "bg-[#30363D] hover:bg-[#8B949E]"}" aria-label="Show ${project.title}" aria-current="${index === activeProject}" data-project-index="${index}"></button>`).join("");
+}
+
+function changeProject(direction) {
+    activeProject = (activeProject + direction + projects.length) % projects.length;
+    renderProject();
+}
+
+previousProject.addEventListener("click", () => changeProject(-1));
+nextProject.addEventListener("click", () => changeProject(1));
+projectDots.addEventListener("click", (event) => {
+    const button = event.target.closest("button[data-project-index]");
+    if (!button) return;
+    activeProject = Number(button.dataset.projectIndex);
+    renderProject();
+});
+carousel.addEventListener("click", (event) => {
+    if (event.target.closest("a")) return;
+    const card = event.target.closest("[data-project-index]");
+    if (!card) return;
+    activeProject = Number(card.dataset.projectIndex);
+    renderProject();
+});
+carousel.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") return;
+    const card = event.target.closest("[data-project-index]");
+    if (!card) return;
+    event.preventDefault();
+    activeProject = Number(card.dataset.projectIndex);
+    renderProject();
+});
+
+renderProject();
