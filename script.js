@@ -119,6 +119,13 @@ const projects = [
         link: "https://github.com/Sunray-hub/AtmosHub-Protable-Weather-Station-"
     },
     {
+        title: "Mythbusters Ai",
+        status: "Finsihed",
+        description: "An AI built wiht python SpaCy",
+        tech: "Python · SpaCy",
+        link: "https://github.com/Sunray-hub/Mythbusters-AI"
+    },
+    {
         title: "ESP32 Multilingual Project Briefier",
         status: "Building",
         description: "An ESP32 project that helps present project information in more than one language.",
