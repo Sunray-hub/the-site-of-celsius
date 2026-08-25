@@ -5,6 +5,35 @@
     margin: 0;
     font-family: 'Space Grotesk', sans-serif;
 }
+
+body {
+    min-height: 100vh;
+    color: #E6EDF3;
+    background-color: #080C12 !important;
+    background-image:
+        linear-gradient(rgba(56, 70, 86, 0.22) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 70, 86, 0.22) 1px, transparent 1px) !important;
+    background-size: 32px 32px !important;
+}
+
+
+.bg-\[\#0D1117\],
+.bg-\[\#0d1117\] {
+    background-color: #080C12 !important;
+}
+
+.bg-\[\#161B22\] {
+    background-color: #101720 !important;
+}
+
+.border-\[\#30363D\],
+.border-\[\#30363d\] {
+    border-color: #2B3948 !important;
+}
+
+.bg-white {
+    background-color: #101720 !important;
+}
 h1{
     font-family: 'Space Grotesk', sans-serif;
 }
@@ -14,7 +43,7 @@ h1{
 }
 
 p{
-    font-family: 'Inter', sans-serif;
+    font-family: "Cormorant Garamond", serif;
 }
 
 #Result{
