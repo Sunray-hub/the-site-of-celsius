@@ -121,7 +121,7 @@ const projects = [
     {
         title: "Mythbusters Ai",
         status: "Finsihed",
-        description: "An AI built wiht python SpaCy",
+        description: "An AI built with python SpaCy",
         tech: "Python · SpaCy",
         link: "https://github.com/Sunray-hub/Mythbusters-AI"
     },
