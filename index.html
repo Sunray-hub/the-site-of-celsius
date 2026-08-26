@@ -243,6 +243,19 @@ Fun fact: sometimes it does.</P>
         <p class="mt-4 text-center text-xs text-[#8B949E]">Click a side card to bring it forward.</p>
     </section>
 
+    <section class="mx-auto my-8 w-[calc(100%-2rem)] max-w-2xl border border-[#30363D] bg-[#161B22] p-5 shadow-lg shadow-black/20 transition-all duration-300 hover:-translate-y-1 hover:border-[#00D9FF] sm:p-6" aria-labelledby="commitName">
+        <div class="flex items-center justify-between gap-4">
+            <div>
+                <p class="font-mono text-xs uppercase tracking-widest text-[#8B949E]">Latest commit</p>
+                <h2 id="commitName" class="mt-1 text-xl font-bold text-[#F0F6FC]">Loading latest commit…</h2>
+                <p class="mt-2 font-mono text-sm text-[#8B949E]" id="commitNumber"></p>
+            </div>
+            <a id="commitLink" href="https://github.com/Sunray-hub/the-site-of-celsius/commits" target="_blank" rel="noopener noreferrer" class="shrink-0 border border-[#30363D] bg-[#0D1117] px-3 py-2 font-mono text-sm text-cyan-300 transition-colors hover:border-cyan-400 hover:text-cyan-200" aria-label="View the latest commit on GitHub">
+                View commit
+            </a>
+        </div>
+    </section>
+
     <script src="script.js"></script>
 
 </body>

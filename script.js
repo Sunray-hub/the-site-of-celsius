@@ -212,3 +212,30 @@ carousel.addEventListener("keydown", (event) => {
 });
 
 renderProject();
+
+
+const repo = "Sunray-hub/the-site-of-celsius";
+const commitName = document.getElementById("commitName");
+const commitNumber = document.getElementById("commitNumber");
+const commitLink = document.getElementById("commitLink");
+
+fetch(`https://api.github.com/repos/${repo}/commits?per_page=1`)
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`GitHub API error: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        const commit = data[0];
+
+        commitName.textContent = commit.commit.message;
+
+        commitNumber.textContent = commit.sha.substring(0, 7);
+        commitLink.href = commit.html_url;
+    })
+    .catch(error => {
+        console.error("Failed to get commit:", error);
+        commitName.textContent = "Unable to load the latest commit.";
+        commitNumber.textContent = "Visit GitHub to see repository activity.";
+    });
