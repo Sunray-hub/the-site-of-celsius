@@ -51,6 +51,32 @@ p{
     font-family: monospace;
 }
 
+.button-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.button-grid a {
+    display: block;
+    width: 88px;
+    height: 31px;
+    transition: transform 180ms ease, filter 180ms ease;
+}
+
+.button-grid a:hover,
+.button-grid a:focus-visible {
+    filter: brightness(1.15);
+    transform: translateY(-2px);
+}
+
+.button-grid img {
+    display: block;
+    width: 88px;
+    height: 31px;
+}
+
 .project-carousel {
     position: relative;
     height: 330px;
