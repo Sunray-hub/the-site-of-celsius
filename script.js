@@ -243,7 +243,7 @@ fetch(`https://api.github.com/repos/${repo}/commits?per_page=1`)
 
     function copyButtonCode() {
     const code = `<a href="https://sunray-hub.github.io/the-site-of-celsius/">
-    <img src="https://sunray-hub.github.io/the-site-of-celsius/button.png"
+    <img src="https://sunray-hub.github.io/the-site-of-celsius/button.gif"
          width="88"
          height="31"
          alt="The Site of Celsius">
