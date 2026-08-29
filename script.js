@@ -239,3 +239,17 @@ fetch(`https://api.github.com/repos/${repo}/commits?per_page=1`)
         commitName.textContent = "Unable to load the latest commit.";
         commitNumber.textContent = "Visit GitHub to see repository activity.";
     });
+
+
+    function copyButtonCode() {
+    const code = `<a href="https://sunray-hub.github.io/the-site-of-celsius/">
+    <img src="https://sunray-hub.github.io/the-site-of-celsius/button.png"
+         width="88"
+         height="31"
+         alt="The Site of Celsius">
+</a>`;
+
+    navigator.clipboard.writeText(code);
+
+    alert("Button code copied!");
+}
