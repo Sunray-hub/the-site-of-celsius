@@ -240,8 +240,9 @@ fetch(`https://api.github.com/repos/${repo}/commits?per_page=1`)
         commitNumber.textContent = "Visit GitHub to see repository activity.";
     });
 
+const copyButton = document.getElementById("copy-button-code");
 
-    function copyButtonCode() {
+async function copyButtonCode() {
     const code = `<a href="https://sunray-hub.github.io/the-site-of-celsius/">
     <img src="https://sunray-hub.github.io/the-site-of-celsius/button.gif"
          width="88"
@@ -249,7 +250,13 @@ fetch(`https://api.github.com/repos/${repo}/commits?per_page=1`)
          alt="The Site of Celsius">
 </a>`;
 
-    navigator.clipboard.writeText(code);
-
-    alert("Button code copied!");
+    try {
+        await navigator.clipboard.writeText(code);
+        alert("Button code copied!");
+    } catch (error) {
+        console.error("Failed to copy button code:", error);
+        alert("Couldn't copy the code. Please try again.");
+    }
 }
+
+copyButton?.addEventListener("click", copyButtonCode);
