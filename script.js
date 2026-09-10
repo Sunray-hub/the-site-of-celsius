@@ -127,11 +127,27 @@ const projects = [
     },
     {
         title: "ESP32 Multilingual Project Briefier",
-        status: "Building",
+        status: "Almost Done",
         description: "An ESP32 project that helps present project information in more than one language.",
         tech: "ESP32 · Embedded development",
         link: ""
+    },
+    {
+        title: "Zenith",
+        status: "Just started",
+        description: "A prooject which displays the stars right above you in the terminal",
+        tech: "Python · Astronomy",
+        link: "https://github.com/Sunray-hub/Zenith"
+    },
+    {
+        title: "MilkoSense",
+        status: "Brainstorming",
+        description: "A milk adultration tester which tells you what is in your milk!",
+        tech: "RP2040 · Embedded development",
+        link: "https://github.com/Sunray-hub/milkoSense"
     }
+
+    
 ];
 
 const carousel = document.getElementById("project-carousel");
