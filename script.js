@@ -126,16 +126,16 @@ const projects = [
         link: "https://github.com/Sunray-hub/Mythbusters-AI"
     },
     {
-        title: "ESP32 Multilingual Project Briefier",
+        title: "ProjectTagr",
         status: "Almost Done",
         description: "An ESP32 project that helps present project information in more than one language.",
         tech: "ESP32 · Embedded development",
-        link: ""
+        link: "https://github.com/Sunray-hub/ProjectTag/"
     },
     {
         title: "Zenith",
         status: "Just started",
-        description: "A prooject which displays the stars right above you in the terminal",
+        description: "A project which displays the stars right above you in the terminal",
         tech: "Python · Astronomy",
         link: "https://github.com/Sunray-hub/Zenith"
     },
