@@ -126,7 +126,7 @@ const projects = [
         link: "https://github.com/Sunray-hub/Mythbusters-AI"
     },
     {
-        title: "ProjectTagr",
+        title: "ProjectTag",
         status: "Almost Done",
         description: "An ESP32 project that helps present project information in more than one language.",
         tech: "ESP32 · Embedded development",
