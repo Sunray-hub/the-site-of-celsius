@@ -119,6 +119,13 @@ const projects = [
         link: "https://github.com/Sunray-hub/AtmosHub-Protable-Weather-Station-"
     },
     {
+        title: "Ryzen",
+        status: "Done (Taking suggestion in my discord server)",
+        description: "An AI powered Discord bot, built with python.",
+        tech: "Python · Discord API",
+        link: "https://github.com/Sunray-hub/ryzen-bot"
+    },
+    {
         title: "Mythbusters Ai",
         status: "Finsihed",
         description: "An AI built with python SpaCy",
